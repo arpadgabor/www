@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'main'>
+
+const { class: className, ...props } = Astro.props
+---
+
+<main class="max-w-6xl w-full mx-auto px-6 pt-20 pb-16 flex-1 relative" class:list={[className]} {...props}>
+	<div class="absolute z-0 border-l border-dashed border-bright/10 w-px left-2 h-full top-0"></div>
+	<div class="absolute z-0 border-r border-dashed border-bright/10 w-px right-2 h-full top-0"></div>
+
+	<slot />
+</main>

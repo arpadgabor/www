@@ -1,0 +1,40 @@
+---
+import HeaderLink from './HeaderLink.astro'
+import { SITE_TITLE } from '../consts'
+import { Icon } from 'astro-icon/components'
+---
+
+<header class="flex items-center justify-center fixed top-0 w-screen pb-2 pt-4 z-50">
+	<nav class="max-w-6xl w-full mx-auto h-full flex items-center justify-between px-6 gap-x-4">
+		<a href="/">
+			<p
+				class="font-bold bg-accent hover:bg-accent-border px-3 h-8 rounded-full flex items-center text-dark transition"
+			>
+				{SITE_TITLE}
+			</p>
+		</a>
+
+		<div class="flex-1 h-px min-w-8 bg-bright/10"></div>
+
+		<div
+			class="internal-links rounded-full overflow-x-auto dark:bg-bright/10 flex gap-x-1 border dark:border-bright/10 p-1 backdrop-blur-lg"
+		>
+			<HeaderLink href="/about">about</HeaderLink>
+			<HeaderLink href="/blog">blog</HeaderLink>
+			<HeaderLink href="/blog">notes</HeaderLink>
+			<HeaderLink href="/blog">library</HeaderLink>
+
+			<div class="w-4"></div>
+
+			<HeaderLink href="https://github.com/arpadgabor/" target="_blank" class="!px-3" title="GitHub Profile">
+				<Icon name="ph:github-logo" size={21} />
+			</HeaderLink>
+			<HeaderLink href="https://twitter.com/arpad_gabor/" target="_blank" class="!px-3" title="Twitter Profile">
+				<Icon name="ph:twitter-logo" size={21} />
+			</HeaderLink>
+			<HeaderLink href="https://www.linkedin.com/in/arpadgabor/" target="_blank" class="!px-3" title="LinkedIn Profile">
+				<Icon name="ph:linkedin-logo" size={21} />
+			</HeaderLink>
+		</div>
+	</nav>
+</header>
